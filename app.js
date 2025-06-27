@@ -8,7 +8,6 @@ const authRoutes = require("./routes/auth");
 
 //middleware
 app.use(express.json());
-const cors = require("cors");
 
 const allowedOrigins = [
   "http://localhost:5173", // for local dev
