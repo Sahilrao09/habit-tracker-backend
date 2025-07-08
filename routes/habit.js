@@ -1,5 +1,10 @@
 const express = require("express");
 const router = express.Router();
+
+const {
+  getHabitLogsByUser,
+  updateHabitLogForDate,
+} = require("../controllers/habitLogController");
 const {
   getAllHabits,
   createHabit,
@@ -19,5 +24,8 @@ router
   .get(authMiddleware, getHabit)
   .patch(authMiddleware, updateHabit)
   .delete(authMiddleware, deleteHabit);
+
+router.get("/logs/:userId", authMiddleware, getHabitLogsByUser);
+router.post("/:habitId/log", authMiddleware, updateHabitLogForDate);
 
 module.exports = router;
