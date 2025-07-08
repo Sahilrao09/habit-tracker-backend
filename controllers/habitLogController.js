@@ -1,4 +1,4 @@
-const Habit = require("../models/habit");
+const Habit = require("../models/HabitModel");
 
 // Get all logs for a user's habits
 const getHabitLogsByUser = async (req, res) => {
